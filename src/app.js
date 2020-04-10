@@ -41,11 +41,11 @@ app.put("/repositories/:id", (req, res) => {
   }
 
   repositories[repository] = {
-    id: uuid(),
+    id,
     title,
     url,
     techs,
-    likes: 0
+    likes: repositories[repository].likes,
   };
 
   return res.status(200).json(repositories[repository]);
